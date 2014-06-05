@@ -1,0 +1,136 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta name="viewport" content="width=700, user-scalable=no">
+		<title>veerman.ca - Ouija (Double-Tap) Virtual Keyboard</title>
+		<style type="text/css">
+			body{
+				padding: 0px;
+				margin: 0px;
+				background-color: #000000;
+			}
+			table{
+				border-spacing: 0;
+				border-collapse: collapse;
+				background-color: #ffffff;
+			}
+			table td, table th{
+				padding: 0; /* 'cellpadding' equivalent */
+			}
+			#keyboard_large{
+				position: absolute;
+			}
+			textarea{
+				font-size: 150%;
+			}
+			td textarea {
+		    width: 100%;
+		    height: 100%;
+			}
+			#status {
+				text-align: center;
+				font-weight:bold;
+			}
+		</style>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<!--<script type="text/javascript" src="js/ZeroClipboard.min.js"></script>-->
+		<!--<script type="text/javascript" src="js/jquery.copy.min.js"></script>-->
+		<script type="text/javascript" src="js/keyboard.js"></script>
+		<script type="text/javascript">
+		var keyboard;
+		$(document).ready(function(){
+			keyboard = ouijaKeyboard();
+		});
+		</script>
+	</head>
+	<body class="ouijaKeyboard">
+		<table width="700" align="center">
+			<tr>
+				<td align="center" valign="top" width="100%">
+					<table width="100%">
+						<tr>
+							<td colspan="2" height="20"><p id="status">Welcome to Ouija (Double-Tap) Virtual Keyboard!</p></td>
+						</tr>
+						<tr>
+							<td width="44">
+								<img src="images/select.jpg" id="select_text" /><br />
+								<!--<img src="images/export.jpg" id="copy_text" />-->
+							</td>
+							<td><textarea id="text_output"></textarea></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" valign="middle">
+					<img src="images/keyboard_large.png" id="keyboard_small" width="700" height="246" />
+					<div id="keyboard_large_div" style="display:none;background-color:#e0ffff;width:700px;">
+						<img src="images/keyboard_large.png" id="keyboard_large" width="1400" height="492" usemap="#keyboard_map" />
+						<map name="keyboard_map" id="keyboard_map">
+							<area shape="rect" coords="0,0,95,93" alt="`" />
+							<area shape="rect" coords="95,0,188,93" alt="1" />
+							<area shape="rect" coords="188,0,281,93" alt="2" />
+							<area shape="rect" coords="281,0,374,93" alt="3" />
+							<area shape="rect" coords="374,0,467,93" alt="4" />
+							<area shape="rect" coords="467,0,560,93" alt="5" />
+							<area shape="rect" coords="560,0,653,93" alt="6" />
+							<area shape="rect" coords="653,0,746,93" alt="7" />
+							<area shape="rect" coords="746,0,839,93" alt="8" />
+							<area shape="rect" coords="839,0,932,93" alt="9" />
+							<area shape="rect" coords="932,0,1026,93" alt="0" />
+							<area shape="rect" coords="1026,0,1119,93" alt="-" />
+							<area shape="rect" coords="1119,0,1212,93" alt="=" />
+							<area shape="rect" coords="1212,0,1400,93" alt="bs" />
+							<area shape="rect" coords="0,93,142,186" alt="tab" />
+							<area shape="rect" coords="142,93,234,186" alt="q" />
+							<area shape="rect" coords="234,93,328,186" alt="w" />
+							<area shape="rect" coords="328,93,421,186" alt="e" />
+							<area shape="rect" coords="421,93,514,186" alt="r" />
+							<area shape="rect" coords="514,93,607,186" alt="t" />
+							<area shape="rect" coords="607,93,700,186" alt="y" />
+							<area shape="rect" coords="700,93,793,186" alt="u" />
+							<area shape="rect" coords="793,93,886,186" alt="i" />
+							<area shape="rect" coords="886,93,979,186" alt="o" />
+							<area shape="rect" coords="979,93,1072,186" alt="p" />
+							<area shape="rect" coords="1072,93,1165,186" alt="[" />
+							<area shape="rect" coords="1165,93,1259,186" alt="]" />
+							<area shape="rect" coords="1259,93,1400,186" alt="\" />
+							<area shape="rect" coords="0,186,165,280" alt="caps" />
+							<area shape="rect" coords="165,186,258,278" alt="a" />
+							<area shape="rect" coords="258,186,351,280" alt="s" />
+							<area shape="rect" coords="351,186,444,280" alt="d" />
+							<area shape="rect" coords="444,186,537,280" alt="f" />
+							<area shape="rect" coords="537,186,630,280" alt="g" />
+							<area shape="rect" coords="630,186,723,280" alt="h" />
+							<area shape="rect" coords="723,186,816,280" alt="j" />
+							<area shape="rect" coords="816,186,909,280" alt="k" />
+							<area shape="rect" coords="909,186,1002,280" alt="l" />
+							<area shape="rect" coords="1002,186,1096,280" alt=";" />
+							<area shape="rect" coords="1096,186,1189,280" alt="'" />
+							<area shape="rect" coords="1189,186,1400,280" alt="enter" />
+							<area shape="rect" coords="0,280,212,373" alt="l_shift" />
+							<area shape="rect" coords="212,280,304,373" alt="z" />
+							<area shape="rect" coords="304,280,398,373" alt="x" />
+							<area shape="rect" coords="398,280,491,373" alt="c" />
+							<area shape="rect" coords="491,280,583,373" alt="v" />
+							<area shape="rect" coords="583,280,677,373" alt="b" />
+							<area shape="rect" coords="677,280,769,373" alt="n" />
+							<area shape="rect" coords="769,280,863,373" alt="m" />
+							<area shape="rect" coords="863,280,956,373" alt="," />
+							<area shape="rect" coords="956,280,1049,373" alt="." />
+							<area shape="rect" coords="1049,280,1142,373" alt="/" />
+							<area shape="rect" coords="1142,280,1400,373" alt="r_shift" />
+							<area shape="rect" coords="0,373,129,487" alt="l_ctrl" />
+							<area shape="rect" coords="128,373,257,487" alt="start" />
+							<area shape="rect" coords="255,373,384,487" alt="l_alt" />
+							<area shape="rect" coords="382,373,922,487" alt="space" />
+							<area shape="rect" coords="920,373,1049,487" alt="r_alt" />
+							<area shape="rect" coords="1047,373,1176,487" alt="print" />
+							<area shape="rect" coords="1174,373,1303,487" alt="r_ctrl" />
+							<area shape="rect" coords="1303,373,1395,487" alt="arrow" />
+						</map>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
