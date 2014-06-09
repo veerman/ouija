@@ -2,13 +2,18 @@
 	<head>
 		<title>Ouija (Double-Tap) Virtual Keyboard</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=700, user-scalable=no">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="viewport" id="vp" content="user-scalable=no,width=700" />
+		<!-- iPhone 5 full screen app fix -->
+		<meta name="viewport" id="vp_iphone5" content="user-scalable=no,width=700" media="(device-height: 568px)" />
 		<meta name="description" content="Ouija Double-Tap Virtual Keyboard. Mouse hover typing. Double-tap typing. Double-click typing. Free and Open Source Online Virtual Keyboard.">
 		<style type="text/css">
 			body{
 				padding: 0px 0px 0px 0px;
 				margin: 0px;
 				background-color: #000000;
+				overflow-y: scroll;
 			}
 			table{
 				border-spacing: 0;
@@ -18,19 +23,18 @@
 			table td, table th{
 				padding: 0; /* 'cellpadding' equivalent */
 			}
-			#keyboard_large{
-				position: absolute;
-			}
-			textarea{
-				font-size: 150%;
-			}
 			td textarea {
+				font-size: 150%;
 		    width: 100%;
 		    height: 100%;
 			}
 			#status {
 				text-align: center;
 				font-weight:bold;
+			}
+			#keyboard_large{
+				position: absolute;
+				z-index: 999;
 			}
 		</style>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -57,7 +61,7 @@
 								<img src="images/select.jpg" id="select_text" /><br />
 								<!--<img src="images/export.jpg" id="copy_text" />-->
 							</td>
-							<td><textarea id="text_output"></textarea></td>
+							<td><textarea id="text_output" readonly></textarea></td>
 						</tr>
 					</table>
 				</td>
@@ -65,7 +69,7 @@
 			<tr>
 				<td align="center" valign="middle">
 					<img src="images/keyboard_large.png" id="keyboard_small" width="700" height="246" />
-					<div id="keyboard_large_div" style="display:none;background-color:#e0ffff;width:700px;">
+					<div id="keyboard_large_div" style="display:none;background-color:#ffffff;width:700px;">
 						<img src="images/keyboard_large.png" id="keyboard_large" width="1400" height="492" usemap="#keyboard_map" />
 						<map name="keyboard_map" id="keyboard_map">
 							<area shape="rect" coords="0,0,95,93" alt="`" />
